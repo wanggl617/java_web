@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.table1{
+    background: rgba(249, 250, 250, 0.7);
+    width: 1040px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 40px 40px 40px 40px;
+    box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.2);
+    z-index: 99999;
+
+}
+
+.table-head {
+    background: rgba(248, 245, 245,0.4);
+    /*box-shadow: -15px 15px 15px rgba(183, 246, 237,0.7);*/
+    text-align: center;
+    color: #0a0a0a;
+
+    width: 900px;
+    align: center;
+    align-self: center;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+
+
+}
