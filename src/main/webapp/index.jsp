@@ -44,7 +44,7 @@
 </head>
 <body background="image/1.jpg";background-size:100% 100%;>
 <div class="show">
-    <a class="login-title" href="UserlistServlet">
+    <a class="login-title" href="findByPageServlet">
         查询所有用户信息
     </a>
 </div>

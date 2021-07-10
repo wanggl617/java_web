@@ -6,9 +6,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>add</title>
+    <title>Update</title>
     <style>
         * {
             margin: 0;
@@ -66,29 +67,41 @@
 <div class="show">
 
     <div class="login-title">
-        <span>添加联系人</span>
+        <span>修改联系人</span>
     </div>
-    <form class="login-con" action="addServlet" method="post">
+    <form class="login-con" action="updateServlet" method="post">
+        <!--隐藏域 提交id-->
+        <input type="hidden" name="id" value="${user.id}">
         <div class="user">
-            <div class="sp">姓名</div><input name="name" type="text" placeholder="姓名">
+            <div class="sp">姓名</div><input name="name" type="text" value="${user.name}" readonly="readonly" placeholder="姓名">
+<!-- readonly : 只读，不可修改-->
         </div>
         <div class="user">
-            <div class="sp">性别</div><input name="gender" type="radio" value="男">男
-            <div style="width: 30px;display: inline-block"></div>
-            <input name="gender" type="radio" value="女">女
+            <div class="sp">性别</div>
+            <c:if test="${user.gender =='男'}">
+                <input name="gender" type="radio" value="男" checked>男
+                <div style="width: 30px;display: inline-block"></div>
+                <input name="gender" type="radio" value="女">女
+            </c:if>
+            <c:if test="${user.gender =='女'}">
+                <input name="gender" type="radio" value="男" >男
+                <div style="width: 30px;display: inline-block"></div>
+                <input name="gender" type="radio" value="女" checked>女
+            </c:if>
         </div>
         <div class="user">
-            <div class="sp">年龄</div><input name="age" type="text" placeholder="年龄">
+            <div class="sp">年龄</div><input name="age" type="text" value="${user.age}" placeholder="年龄">
         </div>
         <div class="user">
-            <div class="sp">地址</div><input name="address" type="text" placeholder="地址">
+            <div class="sp">地址</div><input name="address" type="text" value="${user.address}" placeholder="地址">
         </div>
         <div class="user">
-            <div class="sp">QQ</div><input name="qq" type="text" placeholder="qq">
+            <div class="sp">QQ</div><input name="qq" type="text" value="${user.qq}" placeholder="qq">
         </div>
         <div class="user">
-            <div class="sp">Email</div><input name="email" type="text" placeholder="email">
+            <div class="sp">Email</div><input name="email" type="text" value="${user.email}" placeholder="email">
         </div>
+
         <div>
             <input type="submit" value="提交">
         </div>

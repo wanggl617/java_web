@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+.a{
+    background: rgba(7, 15, 35, 0.51);
+}
 .table1{
     background: rgba(249, 250, 250, 0.7);
     width: 1040px;
