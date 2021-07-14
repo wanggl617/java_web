@@ -16,7 +16,7 @@
         }
         .show{
 
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(30, 37, 40, 0.6);
             width: 400px;
             height: 300px;
             position: absolute;

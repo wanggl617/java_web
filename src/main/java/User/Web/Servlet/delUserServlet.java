@@ -1,29 +1,25 @@
-package User.Web;
+package User.Web.Servlet;
 
 import User.Service.UserService;
 import User.Service.UserServiceImpl;
-import User.domain.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "findUserServlet", value = "/findUserServlet")
-public class findUserServlet extends HttpServlet {
+@WebServlet(name = "delUserServlet", value = "/delUserServlet")
+public class delUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    //1.获取id
+        //1.获取ID
         String id = request.getParameter("id");
-    //2.调用service查询
+        //2.调用service 删除
         UserService service = new UserServiceImpl();
-        User user = service.findUserById(id);
-    //3.将user存入request
-        request.setAttribute("user",user);
-    //4.转发页面到update.jsp
-        System.out.println("test_find");
-        request.getRequestDispatcher("update.jsp").forward(request,response);
-        //request.getRequestDispatcher("list.jsp").forward(request,response);
+        service.deleteUser(id);
+
+        //3.跳转到查询所有的Servlet
+        response.sendRedirect(request.getContextPath()+"/findByPageServlet");
     }
 
     @Override
